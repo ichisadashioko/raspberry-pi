@@ -14,6 +14,8 @@ try:
     while True:
         action = str(input('Enter action (high, low, exit):'))
 
+        print('input was', action, 'type:', type(action))
+
         if action == 'high':
             GPIO.output(LED_PIN, GPIO.HIGH)
         elif action == 'low':
@@ -26,4 +28,4 @@ try:
 
 except:
     GPIO.cleanup()
-    traceback.print_stack()
+    traceback.print_exc()
