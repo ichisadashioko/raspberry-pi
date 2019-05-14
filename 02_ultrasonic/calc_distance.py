@@ -25,6 +25,6 @@ sig_time = end - start
 sound_speed = 343.21  # m/s
 distance = sound_speed * sig_time / 2
 
-print(f'Distance: {distance} m')
+print('Distance:', distance, 'm')
 
 GPIO.cleanup()
