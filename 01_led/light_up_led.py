@@ -1,4 +1,5 @@
 import time
+import traceback
 
 import RPi.GPIO as GPIO
 
@@ -11,7 +12,7 @@ GPIO.setup(LED_PIN, GPIO.OUT)
 
 try:
     while True:
-        action = input('Enter action (high, low, exit):')
+        action = str(input('Enter action (high, low, exit):'))
 
         if action == 'high':
             GPIO.output(LED_PIN, GPIO.HIGH)
@@ -25,3 +26,4 @@ try:
 
 except:
     GPIO.cleanup()
+    traceback.print_stack()
