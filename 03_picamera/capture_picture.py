@@ -7,6 +7,8 @@ def time_now():
 
 
 camera = PiCamera()
+camera.resolution = (2592, 1944)
+camera.framerate = 15
 
 camera.start_preview()
 time.sleep(5)
