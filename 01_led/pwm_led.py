@@ -6,6 +6,7 @@ GPIO.setmode(GPIO.BCM)
 
 LED_PIN = 4
 
+GPIO.setup(LED_PIN, GPIO.OUT)
 p = GPIO.PWM(LED_PIN, 50)
 
 p.start(0)
