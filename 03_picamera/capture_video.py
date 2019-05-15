@@ -10,6 +10,6 @@ camera = PiCamera()
 
 camera.start_preview()
 camera.start_recording('{}.h264'.format(time_now()))
-sleep(10)
+time.sleep(10)
 camera.stop_recording()
 camera.stop_preview()
