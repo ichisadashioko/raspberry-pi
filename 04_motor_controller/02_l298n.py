@@ -7,13 +7,12 @@ import control_utils as cu
 if __name__ == "__main__":
     # Components
     # - Raspberry Pi Model B+ (Pi)
-    # - L298N Motor Controller (L298N)
+    # - L298N Motor Controller (L298N) (not remove 5V regulator jumper)
     # - 2x DC 6V motors
     # - 4x 1.2V AA batteries
     #
     # Wiring
     # - 4.8V+ (Power supply) <-> VCC (L298N)
-    # 3v3 Power 17 (Pi) <-> 5V (L298N)
     # - 4.8V-(Power supply) <-> GRN (L298N) <-> 330 Ohms resistor <-> Ground 39 (Pi)
     # - IN1 (L298N) <-> BCM_5 (Pi)
     # - IN2 (L298N) <-> BCM_6 (Pi)
