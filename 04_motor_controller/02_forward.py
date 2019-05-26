@@ -30,27 +30,27 @@ if __name__ == "__main__":
     controller = cu.L298N(IN1, IN2, IN3, IN4)
 
     try:
-    while True:
-        cmd = input('Enter command (up, down, left, right, exit):')
+        while True:
+            cmd = input('Enter command (up, down, left, right, exit):')
 
-        if cmd == 'up':
-            controller.forward()
-            time.sleep(0.5)
-            controller.stop()
-        elif cmd == 'down':
-            controller.backward()
-            time.sleep(0.5)
-            controller.stop()
-        elif cmd == 'left':
-            controller.left()
-            time.sleep(0.5)
-            controller.stop()
-        elif cmd == 'right':
-            controller.right()
-            time.sleep(0.5)
-            controller.stop()
-        elif cmd == 'exit':
-            break
+            if cmd == 'up':
+                controller.forward()
+                time.sleep(0.5)
+                controller.stop()
+            elif cmd == 'down':
+                controller.backward()
+                time.sleep(0.5)
+                controller.stop()
+            elif cmd == 'left':
+                controller.left()
+                time.sleep(0.5)
+                controller.stop()
+            elif cmd == 'right':
+                controller.right()
+                time.sleep(0.5)
+                controller.stop()
+            elif cmd == 'exit':
+                break
     except:
         pass
 
