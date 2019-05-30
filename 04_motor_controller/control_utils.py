@@ -52,3 +52,9 @@ class L298N:
     def stop(self):
         self.motor_a.stop()
         self.motor_b.stop()
+
+    def all(self):
+        GPIO.output(self.motor_a._forward, True)
+        GPIO.output(self.motor_a._backward, True)
+        GPIO.output(self.motor_b._forward, True)
+        GPIO.output(self.motor_b._backward, True)

@@ -30,23 +30,27 @@ if __name__ == "__main__":
 
     try:
         while True:
-            cmd = input('Enter command (up, down, left, right, exit):')
-
+            cmd = input('Enter command (up, down, left, right, exit, all):')
+            timewait = 1.0
             if cmd == 'up':
                 controller.forward()
-                time.sleep(0.5)
+                time.sleep(timewait)
                 controller.stop()
             elif cmd == 'down':
                 controller.backward()
-                time.sleep(0.5)
+                time.sleep(timewait)
                 controller.stop()
             elif cmd == 'left':
                 controller.left()
-                time.sleep(0.5)
+                time.sleep(timewait)
                 controller.stop()
             elif cmd == 'right':
                 controller.right()
-                time.sleep(0.5)
+                time.sleep(timewait)
+                controller.stop()
+            elif cmd == 'all':
+                controller.all()
+                time.sleep(timewait)
                 controller.stop()
             elif cmd == 'exit':
                 break
