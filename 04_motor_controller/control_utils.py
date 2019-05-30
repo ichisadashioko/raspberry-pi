@@ -30,25 +30,25 @@ class Motor:
 
 class L298N:
     def __init__(self, in1, in2, in3, in4):
-        self.motor_right = Motor(in1, in2)
-        self.motor_left = Motor(in3, in4)
+        self.motor_a = Motor(in1, in2)
+        self.motor_b = Motor(in3, in4)
 
     def forward(self):
-        self.motor_right.forward()
-        self.motor_left.forward()
+        self.motor_a.forward()
+        self.motor_b.forward()
 
     def backward(self):
-        self.motor_right.backward()
-        self.motor_left.backward()
+        self.motor_a.backward()
+        self.motor_b.backward()
 
     def left(self):
-        self.motor_right.forward()
-        self.motor_left.backward()
+        self.motor_a.forward()
+        self.motor_b.backward()
 
     def right(self):
-        self.motor_right.backward()
-        self.motor_left.forward()
+        self.motor_a.backward()
+        self.motor_b.forward()
 
     def stop(self):
-        self.motor_right.stop()
-        self.motor_left.stop()
+        self.motor_a.stop()
+        self.motor_b.stop()
