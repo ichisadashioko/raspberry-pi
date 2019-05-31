@@ -13,6 +13,8 @@ class UltrasonicSensor:
         self._TRIG = trigger
         self._ECHO = echo
         self.speed_of_sound = 343.26  # m/s
+        self.max_distance = 4.0  # m
+        self.min_distance = 0.02  # m
 
         GPIO.setup(self._TRIG, GPIO.OUT)
         GPIO.setup(self._ECHO, GPIO.IN)
@@ -25,6 +27,8 @@ class UltrasonicSensor:
         # but the pre-rise time is unspecified in the "datasheet".
         # 100ms seems sufficiently long to conclude something has failed)
 
+        start_time = 0
+        sig_time = 0
         while GPIO.input(self._ECHO) == False:
             start = time.time()
 
@@ -37,4 +41,9 @@ class UltrasonicSensor:
         sig_time = self.send_and_receive()
 
         d = self.speed_of_sound * sig_time / 2
+
+        if d < self.min_distance:
+            d = 0
+        elif d > self.max_distance:
+            d = -1
         return d
