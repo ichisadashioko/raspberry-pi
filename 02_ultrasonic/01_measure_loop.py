@@ -1,5 +1,6 @@
 import sys
 import time
+import traceback
 
 import RPi.GPIO as GPIO
 
@@ -26,3 +27,4 @@ if __name__ == "__main__":
     except:
         GPIO.cleanup()
         print()
+        traceback.print_exc()
