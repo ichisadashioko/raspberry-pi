@@ -16,12 +16,12 @@ if __name__ == "__main__":
     try:
         GPIO.setup(VCC, GPIO.OUT)
         sensor = ultrasonic.UltrasonicSensor(trigger=TRIG, echo=ECHO)
+        GPIO.output(VCC, True)
 
         while True:
             distance = sensor.calculate_distance()
 
-            print('Distance:', distance, 'm', end='\r')
-            sys.stdout.flush()
+            print('Distance:', distance, 'm')
             time.sleep(timeout)
     except:
         GPIO.cleanup()
