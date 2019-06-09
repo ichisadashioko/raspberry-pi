@@ -58,6 +58,8 @@ if __name__ == "__main__":
                 controller.stop()
             elif cmd == 'exit':
                 break
+
+            print('='*16)
     except:
         pass
 
