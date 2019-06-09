@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
     try:
         while True:
-            cmd = input('Enter command (up, back, left, right, exit, all):')
+            cmd = input('Enter command (up, back, left, right, stop, exit, all):')
             timewait = 1.0
             if cmd == 'up':
                 print('Moving up')
@@ -44,6 +44,9 @@ if __name__ == "__main__":
             elif cmd == 'right':
                 print('Moving right')
                 controller.right()
+            elif cmd == 'stop':
+                print('STOP')
+                controller.stop()
             elif cmd == 'all':
                 controller.all()
             elif cmd == 'exit':
