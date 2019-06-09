@@ -18,12 +18,12 @@ class Motor:
     def forward(self):
         print('Turning on GPIO', self._forward)
         GPIO.output(self._forward, True)
-        print('Turning off GPIO', self._backward)
-        GPIO.output(self._backward, False)
+        # print('Turning off GPIO', self._backward)
+        # GPIO.output(self._backward, False)
 
     def backward(self):
-        print('Turning off GPIO', self._forward)
-        GPIO.output(self._forward, False)
+        # print('Turning off GPIO', self._forward)
+        # GPIO.output(self._forward, False)
         print('Turning on GPIO', self._backward)
         GPIO.output(self._backward, True)
 
