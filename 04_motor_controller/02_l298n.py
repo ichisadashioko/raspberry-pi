@@ -13,7 +13,7 @@ if __name__ == "__main__":
     #
     # Wiring
     # - 4.8V+ (Power supply) <-> VCC (L298N)
-    # - 4.8V-(Power supply) <-> GRN (L298N) <-> 330 Ohms resistor <-> Ground 39 (Pi)
+    # - 4.8V-(Power supply) <-> GRN (L298N) <-> Ground 39 (Pi)
     # - IN1 (L298N) <-> GPIO (Pi)
     # - IN2 (L298N) <-> GPIO (Pi)
     # - IN3 (L298N) <-> GPIO (Pi)
@@ -30,21 +30,25 @@ if __name__ == "__main__":
 
     try:
         while True:
-            cmd = input('Enter command (up, down, left, right, exit, all):')
+            cmd = input('Enter command (up, back, left, right, exit, all):')
             timewait = 1.0
             if cmd == 'up':
+                print('Moving up')
                 controller.forward()
                 time.sleep(timewait)
                 controller.stop()
-            elif cmd == 'down':
+            elif cmd == 'back':
+                print('Moving back')
                 controller.backward()
                 time.sleep(timewait)
                 controller.stop()
             elif cmd == 'left':
+                print('Moving left')
                 controller.left()
                 time.sleep(timewait)
                 controller.stop()
             elif cmd == 'right':
+                print('Moving right')
                 controller.right()
                 time.sleep(timewait)
                 controller.stop()
