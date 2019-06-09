@@ -35,30 +35,22 @@ if __name__ == "__main__":
             if cmd == 'up':
                 print('Moving up')
                 controller.forward()
-                time.sleep(timewait)
-                controller.stop()
             elif cmd == 'back':
                 print('Moving back')
                 controller.backward()
-                time.sleep(timewait)
-                controller.stop()
             elif cmd == 'left':
                 print('Moving left')
                 controller.left()
-                time.sleep(timewait)
-                controller.stop()
             elif cmd == 'right':
                 print('Moving right')
                 controller.right()
-                time.sleep(timewait)
-                controller.stop()
             elif cmd == 'all':
                 controller.all()
-                time.sleep(timewait)
-                controller.stop()
             elif cmd == 'exit':
                 break
 
+            # time.sleep(timewait)
+            # controller.stop()
             print('='*16)
     except:
         pass
